@@ -1,7 +1,7 @@
 package com.example.game.domain
 
 enum class GameClass {
-    ROCK,
+    STONE,
     PAPER,
     SCISSORS
 }

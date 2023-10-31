@@ -1,0 +1,19 @@
+header {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Makes the body take the full height of the viewport */
+    margin: 0;
+}
+
+.logo {
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

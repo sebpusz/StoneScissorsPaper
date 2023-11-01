@@ -27,8 +27,9 @@ class GameController(
     )
     fun retrievePlayersMove(@RequestBody playersMove: MovePayload): PlayersMoveResponse {
         val result = gameService.play(playersMove.choice)
-        println("botChoice  = ${result.first}, result = ${result.second}")
-        return PlayersMoveResponse(playersChoice = playersMove.choice, botChoice = result.first, playersWin = result.second)
+        val response = PlayersMoveResponse(playersChoice = playersMove.choice, botChoice = result.first, playersWin = result.second)
+        println(response)
+        return response
     }
 }
 

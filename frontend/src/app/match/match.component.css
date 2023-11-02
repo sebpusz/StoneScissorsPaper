@@ -1,6 +1,5 @@
-header {
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
-}
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 body {
     display: flex;
@@ -9,11 +8,35 @@ body {
     align-items: center;
     height: 80vh; /* Makes the body take the full height of the viewport */
     margin: 0;
+    font-family: Roboto;
 }
 
-.logo {
-    height: 60px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.board {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.score-board{
+    box-shadow: 5px 5px 5px rgba(72, 67, 67, 0.1);
+    background-color: rgba(225, 225, 225, 0.2);
+    color: rgb(72, 72, 72);
+    width: 400px;
+    text-align: center;
+    font-size: 50px;
+    padding: 25px 25px;
+    position: center;
+  }
+
+.players-selection{
+    color: rgb(44, 43, 43);
+    font-size: 25px;
+    text-align: left;
+    width: 300px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+  }
+
+.restart-btn{
+    margin-top: 10px;
+    text-align: center;
 }

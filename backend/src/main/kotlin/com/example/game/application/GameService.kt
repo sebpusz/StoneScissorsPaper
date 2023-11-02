@@ -13,18 +13,10 @@ class GameService(private val botPlayerService: BotPlayerService) {
     }
     private fun calculateResult(botChoice: GameClass, playersChoice: GameClass): GameResult {
         return when (playersChoice) {
-            botChoice -> convertingtoGameResult(null)
-            GameClass.STONE -> convertingtoGameResult(botChoice == GameClass.SCISSORS)
-            GameClass.PAPER -> convertingtoGameResult(botChoice == GameClass.STONE)
-            GameClass.SCISSORS -> convertingtoGameResult(botChoice == GameClass.PAPER)
-        }
-    }
-
-    private fun convertingtoGameResult(resultBoolean: Boolean?): GameResult {
-        return when (resultBoolean) {
-            true -> GameResult.PLAYERS_WIN
-            false -> GameResult.BOT_WIN
-            null -> GameResult.DRAW
+            botChoice -> GameResult.DRAW
+            GameClass.STONE -> if (botChoice == GameClass.SCISSORS) GameResult.PLAYERS_WIN else GameResult.BOT_WIN
+            GameClass.PAPER -> if (botChoice == GameClass.STONE) GameResult.PLAYERS_WIN else GameResult.BOT_WIN
+            GameClass.SCISSORS -> if (botChoice == GameClass.PAPER) GameResult.PLAYERS_WIN else GameResult.BOT_WIN
         }
     }
 }

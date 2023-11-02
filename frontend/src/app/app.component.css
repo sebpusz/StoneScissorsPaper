@@ -1,7 +1,10 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+header {
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+}
 
-body {
-    margin: 0;
-    background-color: rbg(0, 0, 0, 0.05);
-    font-family: 'Roboto', sans-serif;
+.logo {
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 echo "Building project..."
 cd backend
 ./gradlew clean build

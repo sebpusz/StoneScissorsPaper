@@ -17,9 +17,9 @@ class GameController(
         produces = [MediaType.APPLICATION_JSON_VALUE],
         consumes = [MediaType.APPLICATION_JSON_VALUE]
     )
-    fun retrievePlayersMove(@RequestBody playersMove: MovePayload): PlayersMoveResponse {
+    fun retrievePlayersMove(@RequestBody playersMove: MovePayload): GameResultResponse {
         val result = gameService.play(playersMove.choice)
-        val response = PlayersMoveResponse(playersChoice = playersMove.choice, botChoice = result.first, playersWin = result.second)
+        val response = GameResultResponse(playersChoice = playersMove.choice, botChoice = result.first, result = result.second)
         println(response)
         return response
     }
@@ -27,4 +27,4 @@ class GameController(
 
 data class MovePayload(val choice: GameClass)
 
-data class PlayersMoveResponse(val playersChoice: GameClass, val botChoice: GameClass, val playersWin: GameResult)
+data class GameResultResponse(val playersChoice: GameClass, val botChoice: GameClass, val result: GameResult)

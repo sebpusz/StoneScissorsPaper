@@ -1,3 +1,9 @@
+<div class="score-board"> 
+    <div class="players-selection" id="user-label">Player : {{playerSelected}} </div>
+    <div class="players-selection" id="bot-label">Bot : {{botSelected}} </div>
+    <span id="user-wins"> {{playerWins}} </span>: <span id="bot-wins">{{botWins}}</span>
+</div>
+
 <div class="board">
     <button mat-button (click)="onButtonClick(GameClass.STONE)">
         <mat-icon>STONE</mat-icon>

@@ -21,7 +21,7 @@ class GameControllerTest : FunSpec({
             whenever(gameService.play(playersChoice)).thenReturn(Pair(botChoice, gameResult))
 
             val controllerResult = gameController.retrievePlayersMove(MovePayload(playersChoice))
-            val expectedResult = PlayersMoveResponse(playersChoice, botChoice, gameResult)
+            val expectedResult = GameResultResponse(playersChoice, botChoice, gameResult)
             controllerResult shouldBe expectedResult
         }
     }

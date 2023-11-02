@@ -11,6 +11,12 @@ body {
     font-family: Roboto;
 }
 
+button {
+    margin-left: 15px;
+    margin-right: 15px;
+    font-family: Roboto;
+}
+
 .board {
     padding-top: 60px;
     text-align: center;

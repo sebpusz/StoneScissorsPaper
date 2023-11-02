@@ -21,7 +21,6 @@ export class Gameservice {
 
     postUserInput(playersChoice: GameClass) { 
         const headers = new HttpHeaders().set("Content-Type", "application/json").set("Accept", "application/json")
-        
         this.httpClient.post("http://localhost:8080/game/playersMove", {
             "choice": playersChoice
         }, { headers }).subscribe({

@@ -1,5 +1,5 @@
 export enum GameClass {
-    STONE,
-    PAPER,
-    SCISSORS
+    STONE = "STONE",
+    PAPER = "PAPER",
+    SCISSORS = "SCISSORS"
 }

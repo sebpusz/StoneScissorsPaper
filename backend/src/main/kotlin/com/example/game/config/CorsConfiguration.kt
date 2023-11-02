@@ -6,7 +6,6 @@ import org.springframework.web.cors.CorsConfiguration
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 import org.springframework.web.filter.CorsFilter
 
-
 @Configuration
 open class CorsConfiguration {
     @Bean
@@ -16,7 +15,7 @@ open class CorsConfiguration {
 
         config.addAllowedOrigin("http://localhost:4200")
         config.addAllowedOrigin("http://localhost")
-        config.addAllowedMethod("*")
+        config.addAllowedMethod("POST")
 
         config.addAllowedHeader("*")
         source.registerCorsConfiguration("/**", config)

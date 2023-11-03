@@ -22,7 +22,7 @@ jobs:
           node-version: '18.x'
       - name: Install dependencies
         run: npm install
-#      - name: Test frontend
-#        run: npm run test
+      - name: Run frontend tests
+        run: npm run test-headless
       - name: Build frontend
         run: npm run build

@@ -9,16 +9,6 @@ import { GameResult } from 'src/domain/gameResult';
 export class Gameservice { 
     constructor(private httpClient: HttpClient) { }
 
-    sendUserInput() { 
-        const headers = new HttpHeaders().set("Content-Type", "application/json").set("Accept", "application/json")
-
-        return this.httpClient.get("http://localhost:8080/game/getbotschoice", { headers }).subscribe({
-            complete: () => { console.log("The POST observable is now completed.") }, 
-            error: () => { console.log("POST call in error") },
-            next: () => {  console.log("POST call successful value returned in body") },
-            });
-    }
-
     async postUserInput(playersChoice: GameClass) : Promise<PlayerMoveResponse> { 
         const headers = new HttpHeaders().set("Content-Type", "application/json").set("Accept", "application/json")
         return new Promise((resolve, reject) => {
@@ -28,12 +18,13 @@ export class Gameservice {
                 error: (error) => { reject(error) },
                 next: (result) => { 
                     console.log(result)
-                    resolve(result) 
+                    resolve(result)
                 }
             });
         });
     }
 }
+
 interface PlayerMoveResponse {
     playersChoice: GameClass, 
     botChoice: GameClass, 

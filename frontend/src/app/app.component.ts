@@ -17,7 +17,7 @@ export class AppComponent {
       this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/svg/stone.svg`)
     );
     this.matIconRegistry.addSvgIcon(
-      `sissors`,
+      `scissors`,
       this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/svg/scissors.svg`)
     );
     this.matIconRegistry.addSvgIcon(

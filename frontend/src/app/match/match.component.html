@@ -1,8 +1,8 @@
 <body>
     <div class="score-board"> 
-        <div class="players-selection" id="user-label">Player : {{playerSelected}} </div>
+        <div class="players-selection" id="player-label">Player : {{playerSelected}} </div>
         <div class="players-selection" id="bot-label">Bot : {{botSelected}} </div>
-        <span>{{playerWins}} : {{botWins}}</span>
+        <span id="gameStat">{{playerWins}} : {{botWins}}</span>
         <div class="restart">
             <button mat-button (click)="onRestartClick()">
                 <mat-icon class="material-icons">refresh</mat-icon>
@@ -17,7 +17,7 @@
             Stone
         </button>
         <button mat-button (click)="onButtonClick(GameClass.SCISSORS)">
-            <mat-icon svgIcon="sissors">Sissors</mat-icon>
+            <mat-icon svgIcon="scissors">Sissors</mat-icon>
             Sissors
         </button>
         <button mat-button (click)="onButtonClick(GameClass.PAPER)">

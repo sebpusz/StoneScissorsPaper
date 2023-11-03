@@ -3,6 +3,7 @@
 ![Backend build status](https://github.com/sebpusz/StoneScissorsPaper/actions/workflows/build-backend.yml/badge.svg)
 ## Prerequirements
 - java
+- node
 - angular
 - docker
 

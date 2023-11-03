@@ -1,6 +1,6 @@
 # StoneScissorsPaper
-![Frontend build status](https://github.com/puszseb/StoneScissorsPaper/actions/workflows/build-frontend.yml/badge.svg) <br>
-![Backend build status](https://github.com/puszseb/StoneScissorsPaper/actions/workflows/build-backend.yml/badge.svg)
+![Frontend build status](https://github.com/sebpusz/StoneScissorsPaper/actions/workflows/build-frontend.yml/badge.svg) <br>
+![Backend build status](https://github.com/sebpusz/StoneScissorsPaper/actions/workflows/build-backend.yml/badge.svg)
 ## Prerequirements
 - java
 - angular

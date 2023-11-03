@@ -11,15 +11,19 @@ import { GameResult } from 'src/domain/gameResult';
 export class MatchComponent {
   constructor(private gameService: Gameservice) { }
   GameClass = GameClass;
+  GameResult = GameResult;
+
   playerWins = 0;
   botWins = 0;
   playerSelected: GameClass | undefined;
   botSelected: GameClass | undefined;
+  gameResult: GameResult | undefined;
 
   async onButtonClick(userInput: GameClass) {
     let result = await this.gameService.postUserInput(userInput);
     this.botSelected = result.botChoice
     this.playerSelected = result.playersChoice
+    this.gameResult = result.result
 
     if (result.result == GameResult.PLAYERS_WIN) {
       this.playerWins++;
@@ -31,6 +35,7 @@ export class MatchComponent {
   onRestartClick() {
     this.botSelected = undefined
     this.playerSelected = undefined
+    this.gameResult = undefined
     this.botWins = 0
     this.playerWins = 0
   }

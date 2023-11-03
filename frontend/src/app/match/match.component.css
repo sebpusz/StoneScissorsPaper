@@ -6,25 +6,29 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* Makes the body take the full height of the viewport */
-    margin: 0;
+    height: 80vh;
+    min-width: 400px;
+    min-height: 450px;
+    margin-left: 0;
+    margin-right: 0;
     font-family: Roboto;
 }
 
 button {
     margin-left: 15px;
     margin-right: 15px;
+    box-shadow: 5px 5px 5px rgba(72, 67, 67, 0.1);
     font-family: Roboto;
 }
 
-.board {
+.button-board {
     padding-top: 60px;
     text-align: center;
 }
 
 .score-board{
     box-shadow: 5px 5px 5px rgba(72, 67, 67, 0.1);
-    background-color: rgba(225, 225, 225, 0.2);
+    background-color: rgba(244, 244, 244);
     color: rgb(72, 72, 72);
     width: 400px;
     text-align: center;

@@ -19,7 +19,7 @@ export class MatchComponent {
   playerWins: number = 0;
   botWins: number = 0;
 
-  async onButtonClick(userInput: GameClass) {
+  async onPlayersChoice(userInput: GameClass) {
     let result = await this.gameService.postUserInput(userInput);
     this.botSelected = result.botChoice
     this.playerSelected = result.playersChoice

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Gameservice } from 'src/service/gameService';
+import { Component, ViewChild } from '@angular/core';
+import { Gameservice } from './gameService';
 import { GameClass } from 'src/domain/gameClass';
 import { GameResult } from 'src/domain/gameResult';
 
@@ -13,18 +13,17 @@ export class MatchComponent {
   GameClass = GameClass;
   GameResult = GameResult;
 
-  playerWins = 0;
-  botWins = 0;
   playerSelected: GameClass | undefined;
   botSelected: GameClass | undefined;
   gameResult: GameResult | undefined;
+  playerWins: number = 0;
+  botWins: number = 0;
 
   async onButtonClick(userInput: GameClass) {
     let result = await this.gameService.postUserInput(userInput);
     this.botSelected = result.botChoice
     this.playerSelected = result.playersChoice
     this.gameResult = result.result
-
     if (result.result == GameResult.PLAYERS_WIN) {
       this.playerWins++;
     } else if (result.result == GameResult.BOT_WIN) {
@@ -32,11 +31,11 @@ export class MatchComponent {
     }
   }
 
-  onRestartClick() {
-    this.botSelected = undefined
-    this.playerSelected = undefined
+  onRestartEvent() {
     this.gameResult = undefined
     this.botWins = 0
     this.playerWins = 0
+    this.botSelected = undefined
+    this.playerSelected = undefined
   }
 }

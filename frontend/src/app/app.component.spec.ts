@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MatchComponent } from './match/match.component';
-import { Gameservice } from 'src/service/gameService';
+import { Gameservice } from './match/gameService';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from "@angular/platform-browser";

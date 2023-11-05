@@ -1,0 +1,17 @@
+<div class="score-board">
+    <div class="winner-box" 
+    [ngClass]="{
+        'win':  gameResult == GameResult.PLAYERS_WIN,
+        'loose': gameResult == GameResult.BOT_WIN,
+        'draw': gameResult == GameResult.DRAW
+     }">{{convertResultToMessage(gameResult)}}</div>
+    <div class="players-selection" id="player-label">Player : {{playerSelected}} </div>
+    <div class="players-selection" id="bot-label">Bot : {{botSelected}} </div>
+    <span id="gameStat">{{playerWins}} : {{botWins}}</span>
+    <div class="restart">
+        <button mat-button (click)="onRestartClick()">
+            <mat-icon class="material-icons">refresh</mat-icon>
+            RESTART
+        </button>
+    </div>
+</div>

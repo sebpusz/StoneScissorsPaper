@@ -1,14 +1,5 @@
 <div class="selection-board">
-    <button mat-button (click)="onPlayersChoiceClick(GameClass.STONE)">
-        <mat-icon svgIcon="stone">STONE</mat-icon>
-        Stone
-    </button>
-    <button mat-button (click)="onPlayersChoiceClick(GameClass.SCISSORS)">
-        <mat-icon svgIcon="scissors">Scissors</mat-icon>
-        Scissors
-    </button>
-    <button mat-button (click)="onPlayersChoiceClick(GameClass.PAPER)">
-        <mat-icon svgIcon="paper">Paper</mat-icon>
-        Paper
-    </button>
+    <app-action-button [gameClass]="GameClass.STONE" [svgIcon]="'stone'" [actionText]="'Stone'" (playersActionEvent)="onPlayersActionsEvent($event)"></app-action-button>
+    <app-action-button [gameClass]="GameClass.SCISSORS" [svgIcon]="'scissors'" [actionText]="'Scissors'" (playersActionEvent)="onPlayersActionsEvent($event)"></app-action-button>
+    <app-action-button [gameClass]="GameClass.PAPER" [svgIcon]="'paper'" [actionText]="'Paper'" (playersActionEvent)="onPlayersActionsEvent($event)"></app-action-button>
 </div>

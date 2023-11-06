@@ -10,7 +10,7 @@ export class SelectionBoardComponent {
   GameClass = GameClass;
   @Output() playersActionEvent = new EventEmitter<GameClass>();
 
-  onPlayersChoiceClick(value: GameClass) {
+  onPlayersActionsEvent(value: GameClass) {
     this.playersActionEvent.emit(value);
   }
 }

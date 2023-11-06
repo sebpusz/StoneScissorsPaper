@@ -10,9 +10,6 @@ import { GameResult } from 'src/domain/gameResult';
 })
 export class MatchComponent {
   constructor(private gameService: Gameservice) { }
-  GameClass = GameClass;
-  GameResult = GameResult;
-
   playerSelected: GameClass | undefined;
   botSelected: GameClass | undefined;
   gameResult: GameResult | undefined;

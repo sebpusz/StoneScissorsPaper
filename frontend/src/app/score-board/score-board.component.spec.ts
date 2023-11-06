@@ -21,7 +21,6 @@ describe('ScoreBoardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  
   it('should provide game board with actions of player and bot and game stats', () => {
     const scoreBoard = document.querySelector('div[class="score-board"]')
     const botChoice = document.querySelector('div[id="bot-label"]');
@@ -32,4 +31,10 @@ describe('ScoreBoardComponent', () => {
     expect(playersChoice).toBeTruthy();
     expect(gameStat).toBeTruthy();
   })
+
+  it('Restart should emmit playersAction-event', async () => {
+    spyOn(component.restartEvent, 'emit');
+    component.onRestartClick();
+    expect(component.restartEvent.emit).toHaveBeenCalledTimes(1);
+  });
 });

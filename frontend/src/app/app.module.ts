@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MatchComponent } from './match/match.component';
 import { ScoreBoardComponent } from './score-board/score-board.component';
 import { SelectionBoardComponent } from './selection-board/selection-board.component';
+import { ActionButtonComponent } from './action-button/action-button.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SelectionBoardComponent } from './selection-board/selection-board.compo
     MatchComponent,
     ScoreBoardComponent,
     SelectionBoardComponent,
+    ActionButtonComponent,
   ],
   imports: [
     BrowserModule,

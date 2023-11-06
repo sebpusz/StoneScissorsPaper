@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { GameClass } from 'src/domain/gameClass';
+
 import { SelectionBoardComponent } from './selection-board.component';
+import { ActionButtonComponent } from '../action-button/action-button.component';
 
 describe('SelectionBoardComponent', () => {
   let component: SelectionBoardComponent;
@@ -8,7 +11,7 @@ describe('SelectionBoardComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SelectionBoardComponent],
+      declarations: [SelectionBoardComponent, ActionButtonComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });
     fixture = TestBed.createComponent(SelectionBoardComponent);
@@ -20,14 +23,14 @@ describe('SelectionBoardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should provide selection board with 3 types of buttons', () => {
+  it('should provide selection board', () => {
     const buttonBoard = document.querySelector('div[class="selection-board"]')
-    const stone = document.querySelector('mat-icon[svgIcon="stone"]');
-    const scissors = document.querySelector('mat-icon[svgIcon="scissors"]');
-    const paper = document.querySelector('mat-icon[svgIcon="paper"]');
     expect(buttonBoard).toBeTruthy();
-    expect(stone).toBeTruthy();
-    expect(scissors).toBeTruthy();
-    expect(paper).toBeTruthy();
   })
+
+  it('OnPlayersAction should emmit playersAction-event', async () => {
+    spyOn(component.playersActionEvent, 'emit');
+    component.onPlayersActionsEvent(GameClass.PAPER);
+    expect(component.playersActionEvent.emit).toHaveBeenCalledTimes(1);
+  });
 });

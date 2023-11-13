@@ -21,13 +21,17 @@ export class MatchComponent {
     this.botSelected = result.botChoice
     this.playerSelected = result.playersChoice
     this.gameResult = result.result
-    if (result.result == GameResult.PLAYERS_WIN) {
+    this.updateGameResult(result.result)
+  }
+
+  updateGameResult(result: GameResult) {
+    if (result == GameResult.PLAYERS_WIN) {
       this.playerWins++;
-    } else if (result.result == GameResult.BOT_WIN) {
+    } else if (result == GameResult.BOT_WIN) {
       this.botWins++;
     }
   }
-
+  
   onRestartEvent() {
     this.gameResult = undefined
     this.botWins = 0

@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { By } from "@angular/platform-browser";
 
 import { ScoreBoardComponent } from './score-board.component';
+import { GameResult } from 'src/domain/gameResult';
 
 describe('ScoreBoardComponent', () => {
   let component: ScoreBoardComponent;
@@ -36,5 +38,30 @@ describe('ScoreBoardComponent', () => {
     spyOn(component.restartEvent, 'emit');
     component.onRestartClick();
     expect(component.restartEvent.emit).toHaveBeenCalledTimes(1);
+  });
+
+  it('should style loose when game result bot win', () => {
+    component.gameResult = GameResult.BOT_WIN;
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.loose')).toHaveSize(1);
+    expect(document.querySelectorAll('.win')).toHaveSize(0);
+    expect(document.querySelectorAll('.draw')).toHaveSize(0);
+  });
+  it('should style loose when game result players win', () => {
+    component.gameResult = GameResult.PLAYERS_WIN;
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.loose')).toHaveSize(0);
+    expect(document.querySelectorAll('.win')).toHaveSize(1);
+    expect(document.querySelectorAll('.draw')).toHaveSize(0);
+  });
+  it('should style draw when game result draw', () => {
+    component.gameResult = GameResult.DRAW;
+    fixture.detectChanges();
+
+    expect(document.querySelectorAll('.loose')).toHaveSize(0);
+    expect(document.querySelectorAll('.win')).toHaveSize(0);
+    expect(document.querySelectorAll('.draw')).toHaveSize(1);
   });
 });

@@ -17,7 +17,7 @@ export class ScoreBoardComponent{
   @Input() botWins: number | undefined;
   @Input() playerSelected: GameClass | undefined;
   @Input() botSelected: GameClass | undefined;
-  @Input()gameResult: GameResult | undefined;
+  @Input() gameResult: GameResult | undefined;
 
   onRestartClick() {
     this.restartEvent.emit();

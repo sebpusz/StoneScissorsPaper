@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Gameservice } from './gameService';
-
 import { MatchComponent } from './match.component';
 import { ScoreBoardComponent } from '../score-board/score-board.component';
 import { SelectionBoardComponent } from '../selection-board/selection-board.component';
@@ -13,6 +11,8 @@ import { GameClass } from 'src/domain/gameClass';
 describe('MatchComponent', () => {
   let component: MatchComponent;
   let fixture: ComponentFixture<MatchComponent>;
+  let gameService: Gameservice;
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -24,6 +24,7 @@ describe('MatchComponent', () => {
     fixture = TestBed.createComponent(MatchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    gameService = TestBed.inject(Gameservice)
   });
 
   it('should create', () => {
@@ -81,4 +82,16 @@ describe('MatchComponent', () => {
     expect(component.botWins).toBe(1);
     expect(component.playerWins).toBe(3);
   })
+
+  it('should call gameservice postUserInput on user action with users input', () => {
+    spyOn(gameService, 'postUserInput').and.returnValue(Promise.resolve(
+      {
+        playersChoice: GameClass.SCISSORS, 
+        botChoice: GameClass.PAPER, 
+        result: GameResult.PLAYERS_WIN
+      }
+    ));
+    component.onPlayersChoice(GameClass.SCISSORS);
+    expect(gameService.postUserInput).toHaveBeenCalledWith(GameClass.SCISSORS)
+  });
 });
